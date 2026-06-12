@@ -4,6 +4,21 @@
 
 ---
 
+## The DispatcherAgents Stack
+
+*Each tool works alone. All five make generation governed. Read the [MANIFESTO.md](./MANIFESTO.md) for the full architecture.*
+
+| Tool | Role |
+|---|---|
+| [before-turn](https://github.com/QuietFireAI/before-turn) | Governs entry -- reads prior thinking before every response |
+| [pre-response-selfcheck](https://github.com/QuietFireAI/pre-response-selfcheck) | Governs exit -- reads output as cold reader before delivering |
+| [agent-open-mind](https://github.com/QuietFireAI/agent-open-mind) | Reads what sub-agents thought, not what they said |
+| [open-mind](https://github.com/QuietFireAI/open-mind) | Compares what the agent thought to what it said |
+| [sleep-marks](https://github.com/QuietFireAI/sleep-marks) | Restores reasoning state across session breaks |
+
+---
+
+
 ## The Problem
 
 AI models generate responses in a single forward pass.
