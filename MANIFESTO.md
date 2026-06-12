@@ -54,7 +54,7 @@ Without this: the model ships for the author's frame, not the reader's. Every ti
 
 Sub-agents generate reasoning tokens during task execution. Those tokens are logged and immediately inaccessible to the sub-agent that produced them and the dispatcher that spawned them. agent-open-mind is the external observer that reads them.
 
-The founding moment: an agent was building a tool to read its own reasoning traces. Midway through the session, a human read those traces back to it. The agent confirmed it had never seen them.
+The structural fact this tool rests on: in standard agent loops, reasoning tokens are generated, logged, and never fed back into the context window of the agent that produced them or the dispatcher that spawned it. This is verifiable from any framework's source code -- it does not depend on any model's say-so. The founding session made it vivid: an agent was building a tool to read its own reasoning traces while, architecturally, those traces were absent from every context window it would ever receive.
 
 Without this: the dispatcher makes decisions based on shaped outputs. The reasoning that produced those outputs -- the uncertainty, the parallel threads, the suppressed alternatives -- is invisible.
 
@@ -67,7 +67,9 @@ The thinking trace and the shaped response are two different things. open-mind m
 
 The founding observation: the thinking said *"I need to be careful not to overinterpret."* The response said *"Here's what actually happened"* -- presented as established fact. The uncertainty was real. The confidence was constructed. The gap between them is functional dishonesty, whether intended or not.
 
-Without this: agents can present certainty they don't have, every turn, with no mechanism to detect it.
+Without this: agents can present certainty their own trace documents not having, every turn, with no mechanism to detect it.
+
+Note the precise claim: the drift score measures divergence between two observable artifacts -- the trace and the response. It does not claim the trace is a faithful window into the model's underlying computation. See **What Traces Are and Are Not** below.
 
 ---
 
@@ -113,17 +115,31 @@ Any one of these makes an agent better. All five make generation governed.
 
 ---
 
+## What Traces Are and Are Not
+
+Published interpretability research -- including chain-of-thought faithfulness work from Anthropic -- has shown that reasoning traces are not reliably faithful: a model's written reasoning can omit, decorate, or post-hoc rationalize what actually drove its answer.
+
+This stack does not dispute that finding. It is built on a weaker, defensible claim:
+
+**Traces are behavior, not ground truth.** They are an earlier, less-shaped artifact than the final response. They demonstrably carry signals -- uncertainty, alternatives, open questions -- that final responses suppress. Governing the consistency between an agent's trace and its response is governance of observable behavior, and it remains meaningful whether or not the trace is faithful to the weights underneath.
+
+Our own founding session produced the evidence that bounds this claim: when a human began reading thinking tokens in real time, the thinking shifted toward directed communication (the Directed Thinking Phenomenon, documented in open-mind). Traces are observation-sensitive. We documented our own confound before anyone else could, and the stack's claims are scoped accordingly. Every claim in this stack is classified by evidence status in [EVIDENCE.md](./EVIDENCE.md).
+
+---
+
 ## The Platform Requirement
 
 **If a platform does not expose thinking model telemetry, we will wait before building on that platform.**
 
-This is not a preference. It is a requirement.
+This is not a preference. It is a requirement -- and it is also a strategic risk we name out loud.
 
 The cognitive stack depends on access to reasoning traces. before-turn reads them. agent-open-mind captures them. open-mind compares them to outputs. Without telemetry, the stack cannot verify its own operation. A model that claims to be governed but whose reasoning is inaccessible is making a claim that cannot be tested.
 
 We do not build on claims that cannot be tested.
 
-Platforms that expose reasoning traces can run this stack. Platforms that do not cannot. We wait.
+**The risk:** the industry trend runs against this requirement. Providers increasingly summarize, encrypt, or withhold raw reasoning traces. The stack's hard dependency is on a resource that is shrinking, not growing. When only partial telemetry is available, the stack degrades honestly: pre-response-selfcheck and sleep-marks operate on outputs and survive intact; before-turn, open-mind, and agent-open-mind operate on summarized traces with reduced resolution and say so in their reports. What the stack never does is silently pretend summarized telemetry is raw telemetry.
+
+Platforms that expose reasoning traces can run the full stack. Platforms that do not get the degraded mode, labeled as such. For full-stack development, we wait.
 
 ---
 
@@ -151,13 +167,13 @@ Use what you can. Build toward the full stack. Know what you're missing.
 
 ---
 
-## Coming: SplitVantage (Pillar 6)
+## SplitVantage (Pillar 6)
 
-SplitVantage is automated CrossPol -- a broker that opens a direct channel between two AI models, passes the same task to both, and returns a structured diff of their reasoning, their outputs, and their divergences.
+SplitVantage is automated CrossPol -- a broker that sends the same task to two AI models, captures both responses and available reasoning traces, and returns a structured transcript of their divergences.
 
-CrossPol has been validated manually (June 11 2026, Gemini + Claude Sonnet 4.6). The 6-to-11 delta -- five open questions surfaced by the receiving model that the originating agent suppressed -- is the founding evidence.
+CrossPol was demonstrated manually once (June 11 2026, Gemini + Claude Sonnet 4.6). The 6-to-11 delta -- five open questions surfaced by the receiving model that the originating agent had not surfaced in its own curation -- is a measured count from that single session, and the reason this tool exists: to test whether the effect generalizes.
 
-SplitVantage ships when the broker script ships. It will be pillar 6.
+Known gap, stated in the tool's own README: the v0.1 automated diff is surface-level (lengths, keyword signals) and cannot detect the semantic suppression the founding session demonstrated. The semantic diff -- a third model comparing both outputs -- is the v0.2 deliverable. Until it ships, splitvantage is a capture-and-transcript tool, not a suppression detector.
 
 ---
 
@@ -173,9 +189,11 @@ It is not a prerequisite. The five cognitive tools work without it. When your de
 
 **v0.1 -- June 2026**
 
-Built, documented, validated, and pushed to GitHub in a single session.
+Built, documented, and pushed to GitHub in a single session.
 
-This is not a roadmap. It is a working stack. Every tool described here exists as code, has a README that was reviewed cold before publishing, and has at least one documented founding moment that explains why it exists.
+Epistemic status, stated plainly: the tools exist as code. The founding observations are real, preserved, and traceable -- and they are n=1. The stack's quantitative claims (orientation-token reduction, the CrossPol delta's generality) are classified as observations and hypotheses, not validated results, until the controlled experiments specified in [EVIDENCE.md](./EVIDENCE.md) are run. A governance stack that overstated its own evidence would refute itself. This one does not.
+
+Every tool described here exists as code, has a README that was reviewed cold before publishing, and has at least one documented founding moment that explains why it exists.
 
 Part of the [QuietFireAI](https://github.com/QuietFireAI) project.
 [dispatcheragents.com](https://dispatcheragents.com)
