@@ -18,9 +18,9 @@ These tools watch. And more importantly, they make the agent watch itself.
 
 ---
 
-## The Five Tools
+## The Six Tools
 
-Each tool stands alone. Together they create end-to-end governed generation.
+Each of the six tools stands alone. Together they create end-to-end governed generation.
 
 ### 1. [before-turn](https://github.com/QuietFireAI/before-turn)
 **Governs entry into each response.**
@@ -84,6 +84,15 @@ Without this: every session restart loses the cognitive state. The agent begins 
 
 ---
 
+### 6. [splitvantage](https://github.com/QuietFireAI/splitvantage)
+**Sends one task to two models — surfaces what each one's reasoning suppressed.**
+
+One model curates its own open questions; a second model, given the same task, surfaces the questions the first one quietly dropped. In the founding session (June 11 2026), the originating model named 6 open questions and the receiving model surfaced 11 — a delta of 5 the first model had suppressed in its own curation. splitvantage automates that cross-examination so the effect can be tested at scale.
+
+Without this: a single model's blind spots stay invisible, because the only thing positioned to catch them is another model that doesn't share them.
+
+---
+
 ## How They Connect
 
 ```
@@ -111,7 +120,7 @@ open-mind is the accountability layer between them.
 agent-open-mind extends visibility from self to sub-agents.
 sleep-marks extends visibility across time.
 
-Any one of these makes an agent better. All five make generation governed.
+Any one of these makes an agent better. All six make generation governed.
 
 ---
 
@@ -161,27 +170,18 @@ The primitive this enables: **agents that are accountable to their own reasoning
 
 Each tool in this stack is valid on its own. A developer who uses only before-turn gets a better agent. A developer who uses only sleep-marks gets better session continuity.
 
-But the stack's full claim -- that governed generation is possible at the agent layer, above the model, without retraining -- that claim requires all five tools. Remove one and the cake doesn't rise. The remaining tools are making promises the missing tool was supposed to keep.
+But the stack's full claim -- that governed generation is possible at the agent layer, above the model, without retraining -- that claim requires all six tools. Remove one and the cake doesn't rise. The remaining tools are making promises the missing tool was supposed to keep.
 
 Use what you can. Build toward the full stack. Know what you're missing.
 
 ---
 
-## SplitVantage (Pillar 6)
-
-SplitVantage is automated CrossPol -- a broker that sends the same task to two AI models, captures both responses and available reasoning traces, and returns a structured transcript of their divergences.
-
-CrossPol was demonstrated manually once (June 11 2026, Gemini + Claude Sonnet 4.6). The 6-to-11 delta -- five open questions surfaced by the receiving model that the originating agent had not surfaced in its own curation -- is a measured count from that single session, and the reason this tool exists: to test whether the effect generalizes.
-
-Known gap, stated in the tool's own README: the v0.1 automated diff is surface-level (lengths, keyword signals) and cannot detect the semantic suppression the founding session demonstrated. The semantic diff -- a third model comparing both outputs -- is the v0.2 deliverable. Until it ships, splitvantage is a capture-and-transcript tool, not a suppression detector.
-
----
 
 ## TelsonBase
 
 [TelsonBase](https://github.com/QuietFireAI/TelsonBase) governs what agents are permitted to do -- permissions, audit, trust levels, escalation. It is the enterprise extension of this stack.
 
-It is not a prerequisite. The five cognitive tools work without it. When your deployment requires formal permission boundaries and tamper-evident audit trails, TelsonBase is ready. Until then, it is referenced, not required.
+It is not a prerequisite. The six cognitive tools work without it. When your deployment requires formal permission boundaries and tamper-evident audit trails, TelsonBase is ready. Until then, it is referenced, not required.
 
 ---
 
