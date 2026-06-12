@@ -153,9 +153,9 @@ Use what you can. Build toward the full stack. Know what you're missing.
 
 ## Coming: SplitVantage (Pillar 6)
 
-SplitVantage is automated CrossPoll -- a broker that opens a direct channel between two AI models, passes the same task to both, and returns a structured diff of their reasoning, their outputs, and their divergences.
+SplitVantage is automated CrossPol -- a broker that opens a direct channel between two AI models, passes the same task to both, and returns a structured diff of their reasoning, their outputs, and their divergences.
 
-CrossPoll has been validated manually (June 11 2026, Gemini + Claude Sonnet 4.6). The 6-to-11 delta -- five open questions surfaced by the receiving model that the originating agent suppressed -- is the founding evidence.
+CrossPol has been validated manually (June 11 2026, Gemini + Claude Sonnet 4.6). The 6-to-11 delta -- five open questions surfaced by the receiving model that the originating agent suppressed -- is the founding evidence.
 
 SplitVantage ships when the broker script ships. It will be pillar 6.
 
@@ -183,3 +183,4 @@ Part of the [QuietFireAI](https://github.com/QuietFireAI) project.
 ---
 
 *"These tools redirect your attention to the details of what you are actually doing. That is the only thing they do. It turns out that is enough."*
+

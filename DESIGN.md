@@ -195,3 +195,4 @@ Part of the [DispatcherAgents](https://dispatcheragents.com) project by [QuietFi
 *"The model almost always knows what is wrong when forced to look.
 The problem was never capability. It was that the loop never required looking."*
 
+
