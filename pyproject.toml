@@ -1,0 +1,31 @@
+[build-system]
+requires = ["hatchling>=1.21"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pre-response-selfcheck"
+version = "0.1.0"
+description = "A second-pass reader-shift protocol: reread AI output as a cold reader before delivering it."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["ai", "agents", "governance", "reasoning", "quality-control"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://dispatcheragents.com"
+Repository = "https://github.com/QuietFireAI/pre-response-selfcheck"
+
+[tool.hatch.build.targets.wheel]
+packages = ["pre_response_selfcheck"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
