@@ -8,7 +8,7 @@
 
 DispatcherAgents is a governance layer for AI agents.
 
-Not a framework. Not a platform. Not a product. A set of tools — each usable alone, all of them stronger together — that redirect an agent's attention to what it is actually doing: before it responds, after it responds, while it reasons, across sessions, and when it delegates.
+Not a framework. Not a platform. Not a product. It is a set of tools — each usable alone, all of them stronger together — that redirect an agent's attention to what it is actually doing: before and after it responds, while it reasons, across sessions, and when it delegates.
 
 The problem these tools address is not capability. Modern models are capable. The problem is **accountability** — the gap between what a model can do and what it actually does when nothing in the loop requires it to look.
 
