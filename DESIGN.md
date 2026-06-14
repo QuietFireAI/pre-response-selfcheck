@@ -6,7 +6,7 @@
 
 ## The DispatcherAgents Stack
 
-*Each tool works alone. All five make generation governed. Read the [MANIFESTO.md](./MANIFESTO.md) for the full architecture.*
+*Each tool works alone. All six make generation governed. Read the [MANIFESTO.md](./MANIFESTO.md) for the full architecture.*
 
 | Tool | Role |
 |---|---|
@@ -15,6 +15,7 @@
 | [agent-open-mind](https://github.com/QuietFireAI/agent-open-mind) | Reads what sub-agents thought, not what they said |
 | [open-mind](https://github.com/QuietFireAI/open-mind) | Compares what the agent thought to what it said |
 | [sleep-marks](https://github.com/QuietFireAI/sleep-marks) | Restores reasoning state across session breaks |
+| [splitvantage](https://github.com/QuietFireAI/splitvantage) | Sends one task to two models, surfaces what each one's reasoning suppressed |
 
 ---
 
@@ -30,8 +31,8 @@ It never checks whether a reader who doesn't share that frame would receive the 
 This is not a capability gap. The model can simulate a cold reader.
 It simply never does -- because nothing in the generation loop requires it to.
 
-The result: half-assed responses that the model knows are half-assed,
-shipped because "good enough" and "done" feel the same when you never reread.
+The result is substandard output the model itself would catch if it looked --
+shipped because "good enough" and "done" feel identical when you never reread.
 
 Most users would be shocked to learn that AI models:
 1. Do not know their own prior thinking (agent-open-mind addresses this)
@@ -150,8 +151,7 @@ Almost nothing has been spent on the simplest quality control mechanism in writi
 pre-response-selfcheck is not a novel AI capability. It is the third-grade rule, applied
 unconditionally at the end of every generation.
 
-The reason it doesn't exist by default is the same reason Pattern 6 exists:
-shipping feels like the finish line. Reading your own output after shipping
+The reason it doesn't exist by default: shipping feels like the finish line. Reading your own output after shipping
 doesn't feel like a task -- so it doesn't execute.
 
 pre-response-selfcheck makes it a task. Unconditional. Every turn.
@@ -183,7 +183,7 @@ pre-response-selfcheck makes it a task. Unconditional. Every turn.
 Design spec. June 11 2026.
 
 Originated from a live session where the author asked an AI model if it had
-read the five READMEs it just wrote. The honest answer was no.
+read the READMEs it just wrote. The honest answer was no.
 
 The model knew what was wrong the moment it was forced to look.
 That is the entire argument for this tool.
