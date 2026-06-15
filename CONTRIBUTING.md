@@ -4,7 +4,7 @@ Thanks for your interest in the DispatcherAgents stack.
 
 ## The one rule that governs everything else
 
-Any change that adds or strengthens a claim about what these tools do or what effects they produce must come with a corresponding entry (or update) in the stack-wide claims ledger: [dispatcher-agents/EVIDENCE.md](https://github.com/QuietFireAI/dispatcher-agents/blob/master/EVIDENCE.md). A claim that cannot be classified (MEASURED / OBSERVED / HYPOTHESIS / DESIGN CLAIM / POSITION) does not ship. This applies to maintainers too.
+Any change that adds or strengthens a claim about what these tools do or what effects they produce must come with a corresponding entry (or update) in the stack-wide claims ledger: [dispatcher-agents/EVIDENCE.md](https://github.com/QuietFireAI/dispatcher-agents/blob/main/EVIDENCE.md). A claim that cannot be classified (MEASURED / OBSERVED / HYPOTHESIS / DESIGN CLAIM / POSITION) does not ship. This applies to maintainers too.
 
 ## Practical guidelines
 
