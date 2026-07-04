@@ -151,3 +151,7 @@ MIT - QuietFireAI / [QuietFireAI](https://github.com/QuietFireAI)
 ---
 
 *"Every LLM produces output. Almost none of them read it. pre-response-selfcheck makes the model its own first reader."*
+
+## Runtime wiring
+
+Runtime wiring (dispatcher-agents): dispatcher/pillars.py exit_gate runs ReaderShift on outbound envelope text; a FAIL verdict holds the envelope in clarification and audits the flagged line. Needs a reviewer model (deployment config); unarmed state is itself audited.
