@@ -21,7 +21,7 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Homepage = "https://dispatcheragents.com"
+Homepage = "https://github.com/QuietFireAI"
 Repository = "https://github.com/QuietFireAI/pre-response-selfcheck"
 
 [tool.hatch.build.targets.wheel]

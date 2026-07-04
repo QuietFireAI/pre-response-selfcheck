@@ -188,7 +188,7 @@ read the READMEs it just wrote. The honest answer was no.
 The model knew what was wrong the moment it was forced to look.
 That is the entire argument for this tool.
 
-Part of the [DispatcherAgents](https://dispatcheragents.com) project by [QuietFireAI](https://github.com/QuietFireAI).
+Part of the [DispatcherAgents](https://github.com/QuietFireAI/dispatcher-agents) project by [QuietFireAI](https://github.com/QuietFireAI).
 
 ---
 

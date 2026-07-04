@@ -164,7 +164,7 @@ We hold this stack to the standard it exists to enforce, so we state its status 
 
 **Evidence.** The founding observations are real, preserved, and traceable - and they are n=1, drawn from single sessions. The quantitative claims (orientation-token reduction, the generality of the cross-examination delta) are classified as observations and hypotheses, not validated results, until the controlled experiments specified in [EVIDENCE.md](./EVIDENCE.md) are run. A governance stack that overstated its own evidence would refute itself on contact. This one is built not to.
 
-**v0.1 - June 2026.** Part of the [QuietFireAI](https://github.com/QuietFireAI) project · [dispatcheragents.com](https://dispatcheragents.com)
+**v0.1 - June 2026.** Part of the [QuietFireAI](https://github.com/QuietFireAI) project · [QuietFireAI](https://github.com/QuietFireAI)
 
 ---
 
