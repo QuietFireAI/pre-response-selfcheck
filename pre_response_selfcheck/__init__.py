@@ -1,5 +1,5 @@
 """
-pre-response-selfcheck — a second-pass reader-shift protocol for AI agents.
+pre-response-selfcheck - a second-pass reader-shift protocol for AI agents.
 
 Run a reader-shift after a model generates a response and before it is
 delivered: reread the output as a cold reader and either PASS it or revise one

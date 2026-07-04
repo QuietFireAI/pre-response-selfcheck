@@ -1,5 +1,5 @@
 """
-basic.py — run pre-response-selfcheck against a tiny stub model.
+basic.py - run pre-response-selfcheck against a tiny stub model.
 
 No API key needed: `stub_model` stands in for a real LLM call so the example
 runs anywhere. Swap it for a real callable that takes a prompt and returns the
@@ -14,7 +14,7 @@ from pre_response_selfcheck import ReaderShift
 def stub_model(prompt: str) -> str:
     # A real model would read the RESPONSE block in `prompt` and judge it.
     # This stub flags any response that opens with a bare pronoun as failing a
-    # cold reader, and passes everything else — just enough to show both paths.
+    # cold reader, and passes everything else - just enough to show both paths.
     response_block = prompt.split("--- RESPONSE ---", 1)[-1]
     first = response_block.strip().splitlines()[0] if response_block.strip() else ""
     if first[:3].lower() in ("it ", "thi", "the"):

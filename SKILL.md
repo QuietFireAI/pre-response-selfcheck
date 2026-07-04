@@ -13,14 +13,14 @@ description: >
 
 ## What it is
 After output is generated, before it ships, reread it from a position the author
-never occupies: a cold reader who was not in your head. Return a verdict — ship
+never occupies: a cold reader who was not in your head. Return a verdict - ship
 as-is, or fix this one line. It is the exit gate of the six-pillar stack.
 
 ## When to trigger
 Before delivering any response that asserts something, claims a status, makes a
 recommendation, or opens with context the reader may not share.
 
-## The protocol — three questions
+## The protocol - three questions
 Reread the first paragraph of the drafted response as the intended audience and ask:
 
 1. Does the opening earn the reader before it explains?
@@ -36,7 +36,7 @@ pip install -e .            # from the pre-response-selfcheck repo; zero deps
 ```python
 from pre_response_selfcheck import ReaderShift
 verdict = ReaderShift.check(response=draft, audience="cold_developer", model=my_model)
-# my_model is any callable (prompt:str) -> str — you bring the model
+# my_model is any callable (prompt:str) -> str - you bring the model
 if verdict.passed:
     deliver(draft)
 else:
@@ -49,10 +49,10 @@ Empty model reply → the verdict **fails closed** (tainted, not passed).
 - **open-mind** measures thinking-vs-response drift; this checks response-vs-reader clarity. Different gaps, same turn.
 
 ## Honest scope
-Model-agnostic — the package owns the protocol, prompt, and parser; you supply the
+Model-agnostic - the package owns the protocol, prompt, and parser; you supply the
 model. v0.1: audience-specific question sets and auto before-turn integration are
 on the path, not in this release. Effectiveness at scale is not yet measured.
 
 ## Output convention
 End a triggering turn with one line, e.g.:
-`pre-response-selfcheck: PASS` — or — `pre-response-selfcheck: REVISE — line "<...>" → <fix>.`
+`pre-response-selfcheck: PASS` - or - `pre-response-selfcheck: REVISE - line "<...>" → <fix>.`

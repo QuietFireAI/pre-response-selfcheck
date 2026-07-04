@@ -1,10 +1,10 @@
 """
-reader_shift.py — the core of pre-response-selfcheck.
+reader_shift.py - the core of pre-response-selfcheck.
 
 A reader-shift is a second pass over an already-generated response, read from a
 position the generating model never inhabits: a cold reader who was not in the
-author's head. It is NOT a regeneration. It produces a structured verdict —
-ship as-is, or revise one specific line — at roughly 5-10% token overhead.
+author's head. It is NOT a regeneration. It produces a structured verdict - 
+ship as-is, or revise one specific line - at roughly 5-10% token overhead.
 
 Design constraints (matching the README and MANIFESTO):
   * Zero required dependencies. Pure Python 3.9+.
@@ -23,7 +23,7 @@ or:
 
     REVISE
     LINE: <the specific sentence that fails a cold reader>
-    FIX: <the targeted revision — not a rewrite>
+    FIX: <the targeted revision - not a rewrite>
 
 Anything whose first non-empty line is "PASS" (case-insensitive) is a pass.
 Otherwise the LINE:/FIX: fields are parsed out. The raw model text is always
@@ -149,11 +149,11 @@ class ReaderShift:
 
     Two ways to use it:
 
-        # Instance — configure the model once, check many responses
+        # Instance - configure the model once, check many responses
         checker = ReaderShift(model=my_model)
         verdict = checker.run(response, audience="cold_developer")
 
-        # Classmethod — convenience, pass the model per call
+        # Classmethod - convenience, pass the model per call
         verdict = ReaderShift.check(response, audience="cold_developer", model=my_model)
 
     `model` is any callable: prompt string in, model's raw text out. That is the
