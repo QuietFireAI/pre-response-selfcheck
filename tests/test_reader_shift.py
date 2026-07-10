@@ -1,5 +1,10 @@
 """Tests for pre-response-selfcheck. No network, no API: the model is faked."""
 
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 import pytest
 
 from pre_response_selfcheck import (

@@ -8,6 +8,11 @@ model's text (e.g. an OpenAI/Anthropic/local-model wrapper).
     python examples/basic.py
 """
 
+# Allow running directly from a bare clone (no pip install needed)
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
 from pre_response_selfcheck import ReaderShift
 
 
