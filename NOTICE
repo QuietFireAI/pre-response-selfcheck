@@ -1,0 +1,14 @@
+QuietFireAI - dispatcher-agents / governance pillars
+Copyright 2026 QuietFireAI / Jeff Phillips
+
+This product is licensed under the Apache License, Version 2.0.
+
+This open-source layer (the dispatcher-agents governance chassis and the
+six governance pillars: open-mind, before-turn, pre-response-selfcheck,
+agent-open-mind, sleep-marks, splitvantage) is intended for broad
+adoption and contribution.
+
+Domain-specific IDENTITY packages that run on this chassis are licensed
+SEPARATELY and are NOT covered by this Apache-2.0 grant. See
+https://github.com/QuietFireAI for identity availability and commercial
+terms, and TelsonBase for the supported operating environment.
